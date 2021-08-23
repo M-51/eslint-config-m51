@@ -31,7 +31,11 @@ module.exports = {
             rules: {
                 "@typescript-eslint/indent": ["error", 4],
                 "@typescript-eslint/type-annotation-spacing": ["error", { overrides: { returnType : { before : true, after : true }}}],
-                "@typescript-eslint/consistent-type-imports": ["error"]
+                "@typescript-eslint/consistent-type-imports": ["error"],
+                "max-len": ["error", { "code": 150, "ignoreStrings": true, "ignoreTemplateLiterals": true, "ignoreComments": true }],
+                "no-restricted-syntax": ["off", "ForOfStatement"],
+                "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+                "import/extensions": ["error", "ignorePackages"],
             }
         }
     ]
