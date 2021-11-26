@@ -1,5 +1,5 @@
 module.exports = {
-    env: { browser: true, "es2020": true },
+    env: { browser: true, es2021: true, node: true },
     extends: ["eslint-config-airbnb-base"].map(require.resolve),
     parserOptions: {
         ecmaVersion: 2020,
@@ -20,7 +20,7 @@ module.exports = {
     overrides: [
         {
             files: ["**/*.ts"],
-            env: { browser: true, es2020: true },
+            env: { browser: true, es2020: true, node: true },
             extends: ["eslint-config-airbnb-typescript/base"].map(require.resolve),
             parser: "@typescript-eslint/parser",
             parserOptions: {
