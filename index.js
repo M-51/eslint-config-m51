@@ -1,5 +1,5 @@
 module.exports = {
-    env: { browser: true, es2021: true, node: true },
+    env: { browser: true, es2020: true, node: true },
     extends: ["eslint-config-airbnb-base"].map(require.resolve),
     parserOptions: {
         ecmaVersion: 2020,
