@@ -37,7 +37,7 @@ module.exports = {
                 "no-restricted-syntax": ["off", "ForOfStatement"],
                 "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
                 "import/extensions": ["error", "ignorePackages"],
-                " @typescript-eslint/lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }]
+                "@typescript-eslint/lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }]
             }
         }
     ]
