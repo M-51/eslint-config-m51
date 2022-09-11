@@ -10,7 +10,8 @@ module.exports = {
         "max-len": ["error", { code: 150, ignoreStrings: true, ignoreTemplateLiterals: true, ignoreComments: true }],
         "no-restricted-syntax": ["off", "ForOfStatement"],
         "import/no-extraneous-dependencies": ["error", {devDependencies: true}],
-        "import/extensions": ["error", "ignorePackages"]
+        "import/extensions": ["error", "ignorePackages"],
+        "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }]
     },
     ignorePatterns: [
         "dist/**/*",
@@ -36,6 +37,7 @@ module.exports = {
                 "no-restricted-syntax": ["off", "ForOfStatement"],
                 "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
                 "import/extensions": ["error", "ignorePackages"],
+                " @typescript-eslint/lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }]
             }
         }
     ]
