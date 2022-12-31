@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-m51",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "My eslint config",
   "main": "index.js",
   "scripts": {
@@ -21,13 +21,13 @@
   },
   "homepage": "https://github.com/M-51/eslint-config-m51#readme",
   "dependencies": {
-    "@typescript-eslint/parser": "^5.46.1",
+    "@typescript-eslint/parser": "^5.47.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.46.1",
-    "eslint": "^8.30.0",
+    "@typescript-eslint/eslint-plugin": "^5.47.1",
+    "eslint": "^8.31.0",
     "eslint-plugin-import": "^2.26.0"
   }
 }

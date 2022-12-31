@@ -12,7 +12,12 @@ module.exports = {
         "import/no-extraneous-dependencies": ["error", {devDependencies: true}],
         "import/extensions": ["error", "ignorePackages"],
         "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
-        "object-curly-newline": ["error", { "minProperties": 7 }]
+        'object-curly-newline': ['error', {
+            ObjectExpression: { minProperties: 6, multiline: true, consistent: true },
+            ObjectPattern: { minProperties: 6, multiline: true, consistent: true },
+            ImportDeclaration: { minProperties: 6, multiline: true, consistent: true },
+            ExportDeclaration: { minProperties: 6, multiline: true, consistent: true },
+        }],
     },
     ignorePatterns: [
         "dist/**/*",
