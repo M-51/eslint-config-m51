@@ -9,8 +9,8 @@ module.exports = {
         indent: ['error', 4],
         'max-len': ['error', { code: 150, ignoreStrings: true, ignoreTemplateLiterals: true, ignoreComments: true }],
         'no-restricted-syntax': ['off', 'ForOfStatement'],
-        'import/no-extraneous-dependencies': ['error', {devDependencies: true}],
-        'import/extensions': ['error', 'ignorePackages'],
+        'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+        'import/extensions': ["error", "always", { ignorePackages: true }],
         'lines-between-class-members': ['error', 'always', { 'exceptAfterSingleLine': true }],
         'no-await-in-loop': 'off',
         'object-curly-newline': ['error', {
@@ -19,6 +19,9 @@ module.exports = {
             ImportDeclaration: { minProperties: 6, multiline: true, consistent: true },
             ExportDeclaration: { minProperties: 6, multiline: true, consistent: true },
         }],
+        "import/prefer-default-export": ["off"],
+        "import/no-default-export": ["error"],
+        "no-param-reassign": ["error", { "props": false }]
     },
     ignorePatterns: [
         'dist/**/*',
@@ -40,6 +43,7 @@ module.exports = {
                 '@typescript-eslint/indent': ['error', 4],
                 '@typescript-eslint/type-annotation-spacing': ['error', { overrides: { returnType : { before : true, after : true }}}],
                 '@typescript-eslint/consistent-type-imports': ['error'],
+                "@typescript-eslint/consistent-type-exports": ["error"],
                 '@typescript-eslint/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }]
             }
         }
