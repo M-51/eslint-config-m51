@@ -9,7 +9,7 @@ module.exports = {
         indent: ['error', 4],
         'max-len': ['error', { code: 150, ignoreStrings: true, ignoreTemplateLiterals: true, ignoreComments: true }],
         'no-restricted-syntax': ['off', 'ForOfStatement'],
-        'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+        'import/no-extraneous-dependencies': ['off'],
         'import/extensions': ["error", "always", { ignorePackages: true }],
         'lines-between-class-members': ['error', 'always', { 'exceptAfterSingleLine': true }],
         'no-await-in-loop': 'off',
