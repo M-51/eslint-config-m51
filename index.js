@@ -43,8 +43,10 @@ module.exports = {
                 '@typescript-eslint/indent': ['error', 4],
                 '@typescript-eslint/type-annotation-spacing': ['error', { overrides: { returnType : { before : true, after : true }}}],
                 '@typescript-eslint/consistent-type-imports': ['error'],
-                "@typescript-eslint/consistent-type-exports": ["error"],
-                '@typescript-eslint/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }]
+                "@typescript-eslint/consistent-type-exports": ['error'],
+                '@typescript-eslint/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
+                'import/extensions': ['error', 'always', { ignorePackages: true }],
+                'import/no-extraneous-dependencies': ['error', { devDependencies: true }]
             }
         }
     ]
