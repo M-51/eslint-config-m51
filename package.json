@@ -1,8 +1,9 @@
 {
   "name": "eslint-config-m51",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "My eslint config",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,14 +21,15 @@
     "url": "https://github.com/M-51/eslint-config-m51/issues"
   },
   "homepage": "https://github.com/M-51/eslint-config-m51#readme",
-  "dependencies": {
-    "@typescript-eslint/parser": "^6.1.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-airbnb-typescript": "^17.1.0"
-  },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.1.0",
-    "eslint": "^8.45.0",
-    "eslint-plugin-import": "^2.27.5"
+    "eslint": "^9.9.0"
+  },
+  "dependencies": {
+    "@stylistic/eslint-plugin-js": "^2.6.2",
+    "@stylistic/eslint-plugin-plus": "^2.6.2",
+    "@stylistic/eslint-plugin-ts": "^2.6.2",
+    "@typescript-eslint/eslint-plugin": "^8.1.0",
+    "@typescript-eslint/parser": "^8.1.0",
+    "globals": "^15.9.0"
   }
 }
