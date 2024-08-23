@@ -79,8 +79,7 @@ const typescriptRules = Object.freeze({
     '@typescript-eslint/no-this-alias': 'error',
     '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
     '@typescript-eslint/no-unnecessary-condition': 'error',
-    '@typescript-eslint/no-unnecessary-parameter-property-assignment':
-        'error',
+    '@typescript-eslint/no-unnecessary-parameter-property-assignment': 'error',
     '@typescript-eslint/no-unnecessary-qualifier': 'error',
     '@typescript-eslint/no-unnecessary-template-expression': 'error',
     '@typescript-eslint/no-unnecessary-type-arguments': 'error',
@@ -107,7 +106,7 @@ const typescriptRules = Object.freeze({
     '@typescript-eslint/no-useless-empty-export': 'error',
     '@typescript-eslint/no-wrapper-object-types': 'error',
     '@typescript-eslint/non-nullable-type-assertion-style': 'error',
-    'no-throw-literal': 'off',
+    'no-throw-literal': 'off', // unique
     '@typescript-eslint/only-throw-error': 'error',
     '@typescript-eslint/parameter-properties': 'error',
     '@typescript-eslint/prefer-as-const': 'error',
@@ -136,7 +135,7 @@ const typescriptRules = Object.freeze({
     '@typescript-eslint/require-await': 'error',
     '@typescript-eslint/restrict-plus-operands': 'error',
     '@typescript-eslint/restrict-template-expressions': 'error',
-    'no-return-await': 'off',
+    'no-return-await': 'off', // unique
     '@typescript-eslint/return-await': 'error',
     '@typescript-eslint/strict-boolean-expressions': 'error',
     '@typescript-eslint/switch-exhaustiveness-check': 'error',
