@@ -265,7 +265,7 @@ const eslintRules = Object.freeze({
      * Enforce a maximum number of parameters in function definitions
      * @see {@link https://eslint.org/docs/latest/rules/max-params | max-params}
      */
-    'max-params': ['off', 3],
+    'max-params': ['off', 5],
 
     /**
      * Enforce a maximum number of statements allowed in function blocks
@@ -472,15 +472,7 @@ const eslintRules = Object.freeze({
      * Disallow empty functions
      * @see {@link https://eslint.org/docs/latest/rules/no-empty-function | no-empty-function}
      */
-    'no-empty-function': ['error',
-        {
-            allow: [
-                'arrowFunctions',
-                'functions',
-                'methods',
-            ],
-        },
-    ],
+    'no-empty-function': 'error',
 
     /**
      * Disallow empty destructuring patterns
@@ -923,6 +915,10 @@ const eslintRules = Object.freeze({
         {
             selector: 'WithStatement',
             message: '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
+        },
+        {
+            selector: 'TSEnumDeclaration',
+            message: 'I don\'t like enums.',
         },
     ],
 
@@ -1395,7 +1391,7 @@ const eslintRules = Object.freeze({
      * Disallow async functions which have no await expression
      * @see {@link https://eslint.org/docs/latest/rules/require-await | require-await}
      */
-    'require-await': 'off',
+    'require-await': 'error',
 
     /**
      * Enforce the use of u or v flag on RegExp

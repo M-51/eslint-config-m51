@@ -1,20 +1,48 @@
 import { stylisticJavascriptRules } from './javascript.js';
 
+/**
+ * Rules to disable, beacuse eslint-typescript handles them
+ */
+const rulesExtendedByTypescriptEslint = [
+    '@stylistic/js/block-spacing',
+    '@stylistic/js/brace-style',
+    '@stylistic/js/comma-dangle',
+    '@stylistic/js/comma-s',
+    '@stylistic/js/function-call-spacing',
+    '@stylistic/js/indent',
+    '@stylistic/js/key-spacing',
+    '@stylistic/js/keyword-spacing',
+    '@stylistic/js/lines-around-comment',
+    '@stylistic/js/lines-between-class-members',
+    '@stylistic/js/no-extra-parens',
+    '@stylistic/js/no-extra-semi',
+    '@stylistic/js/object-curly-newline',
+    '@stylistic/js/object-curly-spacing',
+    '@stylistic/js/object-property-newline',
+    '@stylistic/js/padding-line-between-statements',
+    '@stylistic/js/quote-props',
+    '@stylistic/js/quotes',
+    '@stylistic/js/semi',
+    '@stylistic/js/space-before-blocks',
+    '@stylistic/js/space-before-function-paren',
+    '@stylistic/js/space-infix-ops',
+];
+
 const stylisticTypescriptRules = Object.freeze({
+    ...Object.fromEntries(rulesExtendedByTypescriptEslint.map((rule) => [rule, 'off'])),
+
     /**
      * This rule enforces consistent spacing inside an open block token and the next token on the same line.
      * This rule also enforces consistent spacing inside a close block token and previous token on the same line.
      * @see {@link https://eslint.style/rules/ts/block-spacing | block-spacing}
      */
     '@stylistic/ts/block-spacing': stylisticJavascriptRules['@stylistic/js/block-spacing'],
-    '@stylistic/js/block-spacing': 'off',
 
     /**
      * This rule enforces consistent brace style for blocks, enums, interfaces, namespaces, modules.
      * @see {@link https://eslint.style/rules/ts/brace-style | brace-style}
      */
     '@stylistic/ts/brace-style': stylisticJavascriptRules['@stylistic/js/brace-style'],
-    '@stylistic/js/brace-style': 'off',
 
     /**
      * This rule enforces consistent use of trailing commas in object and array literals.
@@ -28,7 +56,6 @@ const stylisticTypescriptRules = Object.freeze({
             tuples: stylisticJavascriptRules['@stylistic/js/comma-dangle'].arrays,
         },
     ],
-    '@stylistic/js/comma-dangle': 'off',
 
     /**
      * This rule enforces consistent spacing before and after commas in:
@@ -40,21 +67,18 @@ const stylisticTypescriptRules = Object.freeze({
      * @see {@link https://eslint.style/rules/ts/comma-spacing | comma-spacing}
      */
     '@stylistic/ts/comma-spacing': stylisticJavascriptRules['@stylistic/js/comma-spacing'],
-    '@stylistic/js/comma-spacing': 'off',
 
     /**
      * This rule requires or disallows spaces between the function name and the opening parenthesis that calls it.
      * @see {@link https://eslint.style/rules/ts/function-call-spacing | function-call-spacing}
      */
     '@stylistic/ts/function-call-spacing': stylisticJavascriptRules['@stylistic/js/function-call-spacing'],
-    '@stylistic/js/function-call-spacing': 'off',
 
     /**
      * This rule enforces a consistent indentation style.
      * @see {@link https://eslint.style/rules/ts/indent | indent}
      */
     '@stylistic/ts/indent': stylisticJavascriptRules['@stylistic/js/indent'],
-    '@stylistic/js/indent': 'off',
 
     /**
      * This rule enforces consistent spacing between keys and values in object literal properties.
@@ -62,14 +86,12 @@ const stylisticTypescriptRules = Object.freeze({
      * @see {@link https://eslint.style/rules/ts/key-spacing | key-spacing}
      */
     '@stylistic/ts/key-spacing': stylisticJavascriptRules['@stylistic/js/key-spacing'],
-    '@stylistic/js/key-spacing': 'off',
 
     /**
      * This rule enforces consistent spacing around keywords and keyword-like tokens.
      * @see {@link https://eslint.style/rules/ts/keyword-spacing | keyword-spacing}
      */
     '@stylistic/ts/keyword-spacing': stylisticJavascriptRules['@stylistic/js/keyword-spacing'],
-    '@stylistic/js/keyword-spacing': 'off',
 
     /**
      * This rule requires empty lines before and/or after comments.
@@ -78,7 +100,6 @@ const stylisticTypescriptRules = Object.freeze({
      * @see {@link https://eslint.style/rules/ts/lines-around-comment | lines-around-comment}
      */
     '@stylistic/ts/lines-around-comment': stylisticJavascriptRules['@stylistic/js/lines-around-comment'],
-    '@stylistic/js/lines-around-comment': 'off',
 
     /**
      * This rule improves readability by enforcing lines between class members.
@@ -86,7 +107,6 @@ const stylisticTypescriptRules = Object.freeze({
      * @see {@link https://eslint.style/rules/ts/lines-between-class-members | lines-between-class-members}
      */
     '@stylistic/ts/lines-between-class-members': stylisticJavascriptRules['@stylistic/js/lines-between-class-members'],
-    '@stylistic/js/lines-between-class-members': 'off',
 
     /**
      * This rule enforces keeping to one configurable code style.
@@ -113,7 +133,6 @@ const stylisticTypescriptRules = Object.freeze({
      * @see {@link https://eslint.style/rules/ts/no-extra-parens | no-extra-parens}
      */
     '@stylistic/ts/no-extra-parens': stylisticJavascriptRules['@stylistic/js/no-extra-parens'],
-    '@stylistic/js/no-extra-parens': 'off',
 
     /**
      * Typing mistakes and misunderstandings about where semicolons are required can lead to semicolons that are unnecessary.
@@ -121,21 +140,18 @@ const stylisticTypescriptRules = Object.freeze({
      * @see {@link https://eslint.style/rules/ts/no-extra-semi | no-extra-semi}
      */
     '@stylistic/ts/no-extra-semi': stylisticJavascriptRules['@stylistic/js/no-extra-semi'],
-    '@stylistic/js/no-extra-semi': 'off',
 
     /**
      * A number of style guides require or disallow line breaks inside of object braces and other tokens.
      * @see {@link https://eslint.style/rules/ts/object-curly-newline | object-curly-newline}
      */
     '@stylistic/ts/object-curly-newline': stylisticJavascriptRules['@stylistic/js/object-property-newline'],
-    '@stylistic/js/object-curly-newline': 'off',
 
     /**
      * This rule enforces consistent spacing inside braces of object literals, destructuring assignments, and import/export specifiers.
      * @see {@link https://eslint.style/rules/ts/object-curly-spacing | object-curly-spacing}
      */
     '@stylistic/ts/object-curly-spacing': stylisticJavascriptRules['@stylistic/js/object-curly-spacing'],
-    '@stylistic/js/object-curly-spacing': 'off',
 
     /**
      * This rule permits you to restrict the locations of property specifications in object literals.
@@ -145,7 +161,6 @@ const stylisticTypescriptRules = Object.freeze({
      * @see {@link https://eslint.style/rules/ts/object-property-newline | object-property-newline}
      */
     '@stylistic/ts/object-property-newline': stylisticJavascriptRules['@stylistic/js/object-property-newline'],
-    '@stylistic/js/object-property-newline': 'off',
 
     /**
      * This rule requires or disallows blank lines between the given 2 kinds of statements.
@@ -153,28 +168,24 @@ const stylisticTypescriptRules = Object.freeze({
      * @see {@link https://eslint.style/rules/ts/padding-line-between-statements | padding-line-between-statements}
      */
     '@stylistic/ts/padding-line-between-statements': stylisticJavascriptRules['@stylistic/js/padding-line-between-statements'],
-    '@stylistic/js/padding-line-between-statements': 'off',
 
     /**
      * This rule requires quotes around object literal property names.
      * @see {@link https://eslint.style/rules/ts/quote-props | quote-props}
      */
     '@stylistic/ts/quote-props': stylisticJavascriptRules['@stylistic/js/quote-props'],
-    '@stylistic/js/quote-props': 'off',
 
     /**
      * This rule enforces the consistent use of either backticks, double, or single quotes.
      * @see {@link https://eslint.style/rules/ts/quotes | quotes}
      */
     '@stylistic/ts/quotes': stylisticJavascriptRules['@stylistic/js/quotes'],
-    '@stylistic/js/quotes': 'off',
 
     /**
      * This rule enforces consistent use of semicolons.
      * @see {@link https://eslint.style/rules/ts/semi | semi}
      */
     '@stylistic/ts/semi': stylisticJavascriptRules['@stylistic/js/semi'],
-    '@stylistic/js/semi': 'off',
 
     /**
      * Consistency is an important part of any style guide.
@@ -183,7 +194,6 @@ const stylisticTypescriptRules = Object.freeze({
      * @see {@link https://eslint.style/rules/ts/space-before-blocks | space-before-blocks}
      */
     '@stylistic/ts/space-before-blocks': stylisticJavascriptRules['@stylistic/js/space-before-blocks'],
-    '@stylistic/js/space-before-blocks': 'off',
 
     /**
      * This rule aims to enforce consistent spacing before function parentheses and as such,
@@ -191,14 +201,12 @@ const stylisticTypescriptRules = Object.freeze({
      * @see {@link https://eslint.style/rules/ts/space-before-function-paren | space-before-function-paren}
      */
     '@stylistic/ts/space-before-function-paren': stylisticJavascriptRules['@stylistic/js/space-before-function-paren'],
-    '@stylistic/js/space-before-function-paren': 'off',
 
     /**
      * This rule is aimed at ensuring there are spaces around infix operators.
      * @see {@link https://eslint.style/rules/ts/space-infix-ops | space-infix-ops}
      */
     '@stylistic/ts/space-infix-ops': stylisticJavascriptRules['@stylistic/js/space-infix-ops'],
-    '@stylistic/js/space-infix-ops': 'off',
 
     /**
      * Spacing around type annotations improves the readability of the code.
