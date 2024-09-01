@@ -1,5 +1,3 @@
-import eslintConfigM51 from './src/index.js'
+import { eslintConfigM51 } from './src/index.js';
 
-export default [
-   ...eslintConfigM51,
-];
+export default eslintConfigM51;

@@ -1,4 +1,4 @@
-const stylisticAdditionalRules = Object.freeze({
+const stylisticAdditional = Object.freeze({
     /**
      * Indentation for binary operators in multiline expressions.
      * This is a supplement to the `indent` rule.
@@ -20,4 +20,4 @@ const stylisticAdditionalRules = Object.freeze({
     '@stylistic/plus/type-named-tuple-spacing': 'error',
 });
 
-export { stylisticAdditionalRules };
+export { stylisticAdditional };

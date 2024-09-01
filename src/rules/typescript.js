@@ -47,7 +47,7 @@ const rulesExtendedByTypescriptEslint = [
 ];
 
 const typescriptRules = Object.freeze({
-    ...Object.fromEntries(rulesHandledByTypescript.map((rule) => [rule, 'off'])),
+    ...Object.fromEntries(rulesExtendedByTypescriptEslint.map((rule) => [rule, 'off'])),
 
     /**
      * Require that function overload signatures be consecutive.
@@ -833,7 +833,7 @@ const typescriptRules = Object.freeze({
      */
     '@typescript-eslint/use-unknown-in-catch-callback-variable': 'error',
 
-    ...Object.fromEntries(rulesExtendedByTypescriptEslint.map((rule) => [rule, 'off'])),
+    ...Object.fromEntries(rulesHandledByTypescript.map((rule) => [rule, 'off'])),
 });
 
 export { typescriptRules };

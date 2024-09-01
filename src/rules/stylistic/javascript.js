@@ -1,4 +1,4 @@
-const stylisticJavascriptRules = Object.freeze({
+const stylisticJavascript = Object.freeze({
     /**
      * This rule enforces line breaks after opening and before closing array brackets.
      * @see {@link https://eslint.style/rules/js/array-bracket-newline | array-bracket-newline}
@@ -735,7 +735,7 @@ const stylisticJavascriptRules = Object.freeze({
      * It also provides several exceptions for various documentation styles.
      * @see {@link https://eslint.style/rules/js/spaced-comment | spaced-comment}
      */
-    '@stylistic/js/spaced-comment': ['error', 'always',
+    '@stylistic/js/spaced-comment': ['warn', 'always',
         {
             line: {
                 exceptions: [
@@ -811,4 +811,4 @@ const stylisticJavascriptRules = Object.freeze({
     '@stylistic/js/yield-star-spacing': ['error', 'after'],
 });
 
-export { stylisticJavascriptRules };
+export { stylisticJavascript };
