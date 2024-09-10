@@ -248,6 +248,11 @@ const typescriptRules = Object.freeze({
             format: null,
         },
         {
+            selector: ['parameter'],
+            format: ['camelCase'],
+            leadingUnderscore: 'allow',
+        },
+        {
             selector: [
                 'classProperty',
                 'objectLiteralProperty',
@@ -735,7 +740,7 @@ const typescriptRules = Object.freeze({
      * Require function parameters to be typed as readonly to prevent accidental mutation of inputs.
      * @see {@link https://typescript-eslint.io/rules/prefer-readonly-parameter-types | prefer-readonly-parameter-types}
      */
-    '@typescript-eslint/prefer-readonly-parameter-types': 'error',
+    '@typescript-eslint/prefer-readonly-parameter-types': 'off',
 
     /**
      * Enforce using type parameter when calling `Array#reduce` instead of casting.
