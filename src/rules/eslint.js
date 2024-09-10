@@ -1293,17 +1293,8 @@ const eslintRules = Object.freeze({
      */
     'prefer-destructuring': ['error',
         {
-            VariableDeclarator: {
-                array: false,
-                object: true,
-            },
-            AssignmentExpression: {
-                array: true,
-                object: false,
-            },
-        },
-        {
-            enforceForRenamedProperties: false,
+            array: false,
+            object: true,
         },
     ],
 

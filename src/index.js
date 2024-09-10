@@ -43,6 +43,7 @@ const eslintConfigM51 = [
         rules: {
             'import-x/no-anonymous-default-export': 'off',
             'import-x/no-default-export': 'off',
+            'import-x/prefer-default-export': 'error',
         },
     },
     {
