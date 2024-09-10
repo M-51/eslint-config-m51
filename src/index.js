@@ -12,7 +12,6 @@ import { importJavascriptRules, importTypescriptRules } from './rules/import/ind
 
 const eslintConfigM51 = [
     {
-        ignores: ['**/node_modules/', '**/build/'],
         languageOptions: {
             sourceType: 'module',
             globals: {
@@ -73,6 +72,13 @@ const eslintConfigM51 = [
                 typescript: true,
             },
         },
+    },
+    {
+        ignores: [
+            '**/node_modules/',
+            '**/build/',
+            '**/dist/',
+        ],
     },
 ];
 
