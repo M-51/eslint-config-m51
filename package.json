@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-m51",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "My eslint config",
   "main": "eslint.config.js",
   "type": "module",
