@@ -369,7 +369,7 @@ const typescriptRules = Object.freeze({
      * Enforce the use of top-level import type qualifier when an import only has specifiers with inline type qualifiers.
      * @see {@link https://typescript-eslint.io/rules/no-import-type-side-effects | no-import-type-side-effects}
      */
-    '@typescript-eslint/no-import-type-side-effects': 'error',
+    '@typescript-eslint/no-import-type-side-effects': 'off',
 
     /**
      * Disallow explicit type declarations for variables or parameters initialized to a number, string, or boolean.
