@@ -11,4 +11,12 @@ import eslintConfigM51 from 'eslint-config-m51';
 
 export default eslintConfigM51;
 ```
+or
+```
+import eslintConfigReactM51 from 'eslint-config-m51/react';
+
+export default eslintConfigReactM51;
+```
+for React
+
 * for TypeScript, requires `strictNullChecks` or `strict` to be `true` in `tsconfig.json`,
