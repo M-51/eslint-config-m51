@@ -337,7 +337,7 @@ const stylisticJavascript = Object.freeze({
             code: 125,
             tabWidth: 4,
             comments: 150,
-            ignoreComments: false,
+            ignoreComments: true,
             ignoreStrings: true,
             ignoreUrls: true,
             ignoreRegExpLiterals: true,
