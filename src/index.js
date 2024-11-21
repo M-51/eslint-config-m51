@@ -104,7 +104,7 @@ const eslintConfigReactM51 = [
         },
     },
     {
-        files: ['**/*.js'],
+        files: ['**/*.js', '**/*.jsx'],
         plugins: {
             '@stylistic/js': stylisticJsPlugin,
             '@stylistic/plus': stylisticPlusPlugin,
@@ -122,7 +122,7 @@ const eslintConfigReactM51 = [
         },
     },
     {
-        files: ['**/*.ts'],
+        files: ['**/*.ts', '**/*.tsx'],
         plugins: {
             '@typescript-eslint': typescriptEslintPlugin,
             '@stylistic/js': stylisticJsPlugin,

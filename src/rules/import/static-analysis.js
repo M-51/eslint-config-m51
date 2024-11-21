@@ -69,7 +69,7 @@ const importStaticAnalysis = Object.freeze({
      * Ensure imports point to a file/module that can be resolved.
      * @see {@link https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-unresolved.md | import-x/no-unresolved}
      */
-    'import-x/no-unresolved': ['error',
+    'import-x/no-unresolved': ['off',
         {
             commonjs: true,
             caseSensitive: true,
