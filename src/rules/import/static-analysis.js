@@ -71,6 +71,8 @@ const importStaticAnalysis = Object.freeze({
      */
     'import-x/no-unresolved': ['error',
         {
+            commonjs: true,
+            caseSensitive: true,
             ignore: ['^@typescript-eslint/'],
         },
     ],

@@ -42,14 +42,6 @@ const eslintConfigM51 = [
         },
     },
     {
-        files: ['eslint.config.js'],
-        rules: {
-            'import-x/no-anonymous-default-export': 'off',
-            'import-x/no-default-export': 'off',
-            'import-x/prefer-default-export': 'error',
-        },
-    },
-    {
         files: ['**/*.ts'],
         plugins: {
             '@typescript-eslint': typescriptEslintPlugin,
@@ -83,6 +75,14 @@ const eslintConfigM51 = [
             '**/build/',
             '**/dist/',
         ],
+    },
+    {
+        files: ['eslint.config.js'],
+        rules: {
+            'import-x/no-anonymous-default-export': 'off',
+            'import-x/no-default-export': 'off',
+            'import-x/prefer-default-export': 'error',
+        },
     },
 ];
 
@@ -122,14 +122,6 @@ const eslintConfigReactM51 = [
         },
     },
     {
-        files: ['eslint.config.js'],
-        rules: {
-            'import-x/no-anonymous-default-export': 'off',
-            'import-x/no-default-export': 'off',
-            'import-x/prefer-default-export': 'error',
-        },
-    },
-    {
         files: ['**/*.ts'],
         plugins: {
             '@typescript-eslint': typescriptEslintPlugin,
@@ -170,6 +162,23 @@ const eslintConfigReactM51 = [
             '**/build/',
             '**/dist/',
         ],
+    },
+    {
+        files: ['**/*.tsx'],
+        rules: {
+            'import-x/no-default-export': 'off',
+            'import-x/prefer-default-export': ['error', {
+                target: 'single',
+            }],
+        },
+    },
+    {
+        files: ['**/eslint.config.js', '**/next.config.ts'],
+        rules: {
+            'import-x/no-anonymous-default-export': 'off',
+            'import-x/no-default-export': 'off',
+            'import-x/prefer-default-export': 'error',
+        },
     },
 ];
 

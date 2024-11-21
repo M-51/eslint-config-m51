@@ -239,6 +239,14 @@ const typescriptRules = Object.freeze({
             format: ['camelCase'],
         },
         {
+            selector: 'function',
+            format: ['camelCase', 'PascalCase'],
+        },
+        {
+            selector: 'import',
+            format: ['camelCase', 'PascalCase'],
+        },
+        {
             selector: ['typeLike', 'class'],
             format: ['PascalCase'],
         },
