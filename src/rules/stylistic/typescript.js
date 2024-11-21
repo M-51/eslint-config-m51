@@ -117,7 +117,7 @@ const stylisticTypescript = Object.freeze({
     '@stylistic/ts/member-delimiter-style': ['error',
         {
             multiline: {
-                delimiter: 'semi',
+                delimiter: 'comma',
                 requireLast: true,
             },
             singleline: {
