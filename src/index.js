@@ -77,7 +77,13 @@ const eslintConfigM51 = [
         ],
     },
     {
-        files: ['eslint.config.js'],
+        files: [
+            '**/eslint.config.js',
+            '**/tailwind.config.js',
+            '**/postcss.config.js',
+            '**/tailwind.config.ts',
+            '**/postcss.config.ts',
+        ],
         rules: {
             'import-x/no-anonymous-default-export': 'off',
             'import-x/no-default-export': 'off',
@@ -173,7 +179,14 @@ const eslintConfigReactM51 = [
         },
     },
     {
-        files: ['**/eslint.config.js', '**/next.config.ts'],
+        files: [
+            '**/eslint.config.js',
+            '**/next.config.ts',
+            '**/tailwind.config.js',
+            '**/postcss.config.js',
+            '**/tailwind.config.ts',
+            '**/postcss.config.ts',
+        ],
         rules: {
             'import-x/no-anonymous-default-export': 'off',
             'import-x/no-default-export': 'off',

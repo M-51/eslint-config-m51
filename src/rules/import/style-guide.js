@@ -91,7 +91,12 @@ const importStyleGuide = Object.freeze({
      * Forbid unassigned imports.
      * @see {@link https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-unassigned-import.md | import-x/no-unassigned-import}
      */
-    'import-x/no-unassigned-import': 'error',
+    'import-x/no-unassigned-import': [
+        'error',
+        {
+            allow: ['**/*.css'],
+        },
+    ],
 
     /**
      * Enforce a convention in module import order.
