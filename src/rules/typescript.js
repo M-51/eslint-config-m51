@@ -239,7 +239,7 @@ const typescriptRules = Object.freeze({
             format: ['camelCase'],
         },
         {
-            selector: 'function',
+            selector: 'variableLike',
             format: ['camelCase', 'PascalCase'],
         },
         {
@@ -254,11 +254,6 @@ const typescriptRules = Object.freeze({
             selector: ['variable', 'parameter'],
             modifiers: ['destructured'],
             format: null,
-        },
-        {
-            selector: ['parameter'],
-            format: ['camelCase'],
-            leadingUnderscore: 'allow',
         },
         {
             selector: [

@@ -356,7 +356,7 @@ const react = Object.freeze({
      * Disallow JSX prop spreading
      * @see {@link https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md | jsx-props-no-spreading}
      */
-    'react/jsx-props-no-spreading': ['error', {
+    'react/jsx-props-no-spreading': ['off', {
         html: 'enforce',
         custom: 'enforce',
         explicitSpread: 'ignore',
@@ -663,7 +663,7 @@ const react = Object.freeze({
      * Enforce a defaultProps definition for every prop that is not a required prop
      * @see {@link https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/require-default-props.md | require-default-props}
      */
-    'react/require-default-props': ['error', {
+    'react/require-default-props': ['off', {
         forbidDefaultForRequired: true,
     }],
 
