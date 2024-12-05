@@ -251,6 +251,10 @@ const typescriptRules = Object.freeze({
             format: ['PascalCase'],
         },
         {
+            selector: ['typeProperty'],
+            format: ['PascalCase', 'camelCase', 'UPPER_CASE'],
+        },
+        {
             selector: ['variable', 'parameter'],
             modifiers: ['destructured'],
             format: null,
@@ -437,7 +441,11 @@ const typescriptRules = Object.freeze({
      * Disallow TypeScript namespaces.
      * @see {@link https://typescript-eslint.io/rules/no-namespace | no-namespace}
      */
-    '@typescript-eslint/no-namespace': 'error',
+    '@typescript-eslint/no-namespace': ['error',
+        {
+            allowDeclarations: true,
+        },
+    ],
 
     /**
      * Disallow non-null assertions in the left operand of a nullish coalescing operator.
