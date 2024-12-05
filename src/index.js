@@ -173,7 +173,7 @@ const eslintConfigReactM51 = [
         files: ['**/*.tsx'],
         rules: {
             'import-x/no-default-export': 'off',
-            'import-x/prefer-default-export': ['error', {
+            'import-x/prefer-default-export': ['off', {
                 target: 'single',
             }],
         },
