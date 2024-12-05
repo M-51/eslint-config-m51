@@ -252,7 +252,7 @@ const typescriptRules = Object.freeze({
         },
         {
             selector: ['typeProperty'],
-            format: ['PascalCase', 'camelCase', 'UPPER_CASE'],
+            format: ['PascalCase', 'camelCase', 'UPPER_CASE', 'snake_case'],
         },
         {
             selector: ['variable', 'parameter'],
