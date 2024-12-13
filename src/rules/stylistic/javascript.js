@@ -506,7 +506,7 @@ const stylisticJavascript = Object.freeze({
      */
     '@stylistic/js/no-multiple-empty-lines': ['error',
         {
-            max: 1,
+            max: 2,
             maxBOF: 0,
             maxEOF: 0,
         },
