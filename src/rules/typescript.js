@@ -429,7 +429,13 @@ const typescriptRules = Object.freeze({
      * Disallow Promises in places not designed to handle them.
      * @see {@link https://typescript-eslint.io/rules/no-misused-promises | no-misused-promises}
      */
-    '@typescript-eslint/no-misused-promises': 'error',
+    '@typescript-eslint/no-misused-promises': ['error',
+        {
+            checksVoidReturn: {
+                arguments: false,
+            },
+        },
+    ],
 
     /**
      * Disallow enums from having both number and string members.
