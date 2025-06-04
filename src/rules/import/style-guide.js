@@ -3,7 +3,7 @@ const importStyleGuide = Object.freeze({
      * Enforce or ban the use of inline type-only markers for named imports.
      * @see {@link https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/consistent-type-specifier-style.md | import-x/consistent-type-specifier-style}
      */
-    'import-x/consistent-type-specifier-style': ['error', 'prefer-inline'],
+    'import-x/consistent-type-specifier-style': ['error', 'prefer-top-level'],
 
     /**
      * Enforce a leading comment with the webpackChunkName for dynamic imports.
