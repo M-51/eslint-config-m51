@@ -339,7 +339,12 @@ const typescriptRules = Object.freeze({
      * Disallow accidentally using the "empty object" type.
      * @see {@link https://typescript-eslint.io/rules/no-empty-object-type | no-empty-object-type}
      */
-    '@typescript-eslint/no-empty-object-type': 'error',
+    '@typescript-eslint/no-empty-object-type': [
+        'error',
+        {
+            allowInterfaces: 'with-single-extends',
+        },
+    ],
 
     /**
      * Disallow the any type.
