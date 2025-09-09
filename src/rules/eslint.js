@@ -1220,7 +1220,12 @@ const eslintRules = Object.freeze({
      * Disallow void operators
      * @see {@link https://eslint.org/docs/latest/rules/no-void | no-void}
      */
-    'no-void': 'error',
+    'no-void': [
+        'error',
+        {
+            allowAsStatement: true,
+        },
+    ],
 
     /**
      * Disallow specified warning terms in comments
