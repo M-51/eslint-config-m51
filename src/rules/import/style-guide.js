@@ -21,11 +21,9 @@ const importStyleGuide = Object.freeze({
      * Ensure consistent use of file extension within the import path.
      * @see {@link https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/extensions.md | import-x/extensions}
      */
-    'import-x/extensions': ['error', 'always',
-        {
-            ignorePackages: true,
-        },
-    ],
+    'import-x/extensions': ['error', 'always', {
+        ignorePackages: true,
+    }],
 
     /**
      * Ensure all imports appear before other statements.
@@ -102,17 +100,22 @@ const importStyleGuide = Object.freeze({
      * Enforce a convention in module import order.
      * @see {@link https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/order.md | import-x/order}
      */
-    'import-x/order': ['error',
-        {
-            groups: [['builtin', 'external', 'internal']],
-        },
-    ],
+    'import-x/order': ['error', {
+        groups: [['builtin', 'external', 'internal']],
+    }],
 
     /**
      * Prefer a default export if module exports a single name or multiple names.
      * @see {@link https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/prefer-default-export.md | import-x/prefer-default-export}
      */
     'import-x/prefer-default-export': 'off',
+
+    /**
+     * Enforce using namespace imports for specific modules, like react/react-dom, etc.
+     * @see {@link https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/prefer-namespace-import.md | import-x/prefer-namespace-import}
+     */
+    'import-x/prefer-namespace-import': 'off',
+
 });
 
 export { importStyleGuide };

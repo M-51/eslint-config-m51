@@ -1,17 +1,14 @@
 import globals from 'globals';
-import typescriptEslintParser from '@typescript-eslint/parser';
-import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin';
-import stylisticJsPlugin from '@stylistic/eslint-plugin-js';
-import stylisticTsPlugin from '@stylistic/eslint-plugin-ts';
-import stylisticPlusPlugin from '@stylistic/eslint-plugin-plus';
+import stylisticPlugin from '@stylistic/eslint-plugin';
 import importXPlugin from 'eslint-plugin-import-x';
-import reactPlugin from 'eslint-plugin-react';
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
-import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
+import typescriptEslint from 'typescript-eslint';
+import reactPlugin from '@eslint-react/eslint-plugin';
+
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 import { eslintRules } from './rules/eslint.js';
 import { typescriptRules } from './rules/typescript.js';
-import { stylisticJavascriptRules, stylisticTypescriptRules } from './rules/stylistic/index.js';
 import { importJavascriptRules, importTypescriptRules } from './rules/import/index.js';
+import { stylisticRules } from './rules/stylistic.js';
 import { reactRules } from './rules/react/index.js';
 
 const eslintConfigM51 = [
@@ -31,28 +28,25 @@ const eslintConfigM51 = [
     {
         files: ['**/*.js'],
         plugins: {
-            '@stylistic/js': stylisticJsPlugin,
-            '@stylistic/plus': stylisticPlusPlugin,
+            '@stylistic': stylisticPlugin,
             'import-x': importXPlugin,
         },
         rules: {
             ...eslintRules,
-            ...stylisticJavascriptRules,
+            ...stylisticRules,
             ...importJavascriptRules,
         },
     },
     {
         files: ['**/*.ts'],
         plugins: {
-            '@typescript-eslint': typescriptEslintPlugin,
-            '@stylistic/js': stylisticJsPlugin,
-            '@stylistic/plus': stylisticPlusPlugin,
-            '@stylistic/ts': stylisticTsPlugin,
+            '@typescript-eslint': typescriptEslint.plugin,
+            '@stylistic': stylisticPlugin,
             'import-x': importXPlugin,
         },
         languageOptions: {
             sourceType: 'module',
-            parser: typescriptEslintParser,
+            parser: typescriptEslint.parser,
             parserOptions: {
                 projectService: true,
             },
@@ -60,13 +54,13 @@ const eslintConfigM51 = [
         rules: {
             ...eslintRules,
             ...typescriptRules,
-            ...stylisticTypescriptRules,
+            ...stylisticRules,
             ...importTypescriptRules,
         },
         settings: {
-            'import-x/resolver': {
-                typescript: true,
-            },
+            'import-x/resolver-next': [
+                createTypeScriptImportResolver(),
+            ],
         },
     },
     {
@@ -79,10 +73,6 @@ const eslintConfigM51 = [
     {
         files: [
             '**/eslint.config.js',
-            '**/tailwind.config.js',
-            '**/postcss.config.js',
-            '**/tailwind.config.ts',
-            '**/postcss.config.ts',
         ],
         rules: {
             'import-x/no-anonymous-default-export': 'off',
@@ -91,6 +81,7 @@ const eslintConfigM51 = [
         },
     },
 ];
+
 
 const eslintConfigReactM51 = [
     {
@@ -112,54 +103,44 @@ const eslintConfigReactM51 = [
     {
         files: ['**/*.js', '**/*.jsx'],
         plugins: {
-            '@stylistic/js': stylisticJsPlugin,
-            '@stylistic/plus': stylisticPlusPlugin,
+            '@stylistic': stylisticPlugin,
             'import-x': importXPlugin,
-            react: reactPlugin,
-            'jsx-a11y': jsxA11yPlugin,
-            'react-hooks': reactHooksPlugin,
-
+            '@eslint-react': reactPlugin,
         },
         rules: {
             ...eslintRules,
-            ...stylisticJavascriptRules,
+            ...stylisticRules,
             ...importJavascriptRules,
             ...reactRules,
+            ...reactPlugin.configs['disable-type-checked'].rules,
         },
     },
     {
         files: ['**/*.ts', '**/*.tsx'],
         plugins: {
-            '@typescript-eslint': typescriptEslintPlugin,
-            '@stylistic/js': stylisticJsPlugin,
-            '@stylistic/plus': stylisticPlusPlugin,
-            '@stylistic/ts': stylisticTsPlugin,
+            '@typescript-eslint': typescriptEslint.plugin,
+            '@stylistic': stylisticPlugin,
             'import-x': importXPlugin,
-            react: reactPlugin,
-            'jsx-a11y': jsxA11yPlugin,
-            'react-hooks': reactHooksPlugin,
+            '@eslint-react': reactPlugin,
         },
         languageOptions: {
             sourceType: 'module',
-            parser: typescriptEslintParser,
+            parser: typescriptEslint.parser,
             parserOptions: {
                 projectService: true,
-                ecmaFeatures: {
-                    jsx: true,
-                },
             },
         },
         rules: {
             ...eslintRules,
             ...typescriptRules,
-            ...stylisticTypescriptRules,
+            ...stylisticRules,
             ...importTypescriptRules,
             ...reactRules,
         },
         settings: {
-            'import-x/resolver': {
-                typescript: true,
-            },
+            'import-x/resolver-next': [
+                createTypeScriptImportResolver(),
+            ],
         },
     },
     {
@@ -170,22 +151,8 @@ const eslintConfigReactM51 = [
         ],
     },
     {
-        files: ['**/*.tsx'],
-        rules: {
-            'import-x/no-default-export': 'off',
-            'import-x/prefer-default-export': ['off', {
-                target: 'single',
-            }],
-        },
-    },
-    {
         files: [
             '**/eslint.config.js',
-            '**/next.config.ts',
-            '**/tailwind.config.js',
-            '**/postcss.config.js',
-            '**/tailwind.config.ts',
-            '**/postcss.config.ts',
         ],
         rules: {
             'import-x/no-anonymous-default-export': 'off',

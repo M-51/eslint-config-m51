@@ -9,7 +9,7 @@ const importHelpfulWarnings = Object.freeze({
      * Forbid imported names marked with `@deprecated` documentation tag.
      * @see {@link https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-deprecated.md | import-x/no-deprecated}
      */
-    'import-x/no-deprecated': 'warn',
+    'import-x/no-deprecated': 'error',
 
     /**
      * Forbid empty named import blocks.
@@ -45,7 +45,7 @@ const importHelpfulWarnings = Object.freeze({
      * Prohibit importing a default export by another name.
      * @see {@link https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-rename-default.md | import-x/no-rename-default}
      */
-    'import-x/no-rename-default': 'error',
+    'import-x/no-rename-default': 'off',
 
     /**
      * Forbid modules without exports, or exports without matching import in another module.
@@ -54,13 +54,11 @@ const importHelpfulWarnings = Object.freeze({
      * So rule is disabled for now
      * @see {@link https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-unused-modules.md | import-x/no-unused-modules}
      */
-    'import-x/no-unused-modules': ['off',
-        {
-            unusedExports: true,
-            missingExports: true,
-            ignoreUnusedTypeExports: true,
-        },
-    ],
+    'import-x/no-unused-modules': ['off', {
+        unusedExports: true,
+        missingExports: true,
+        ignoreUnusedTypeExports: true,
+    }],
 });
 
 export { importHelpfulWarnings };

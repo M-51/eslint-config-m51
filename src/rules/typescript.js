@@ -37,6 +37,7 @@ const rulesExtendedByTypescriptEslint = [
     'no-restricted-imports',
     'no-shadow',
     'no-unused-expressions',
+    'no-unused-private-class-members',
     'no-unused-vars',
     'no-use-before-define',
     'no-useless-constructor',
@@ -59,11 +60,9 @@ const typescriptRules = Object.freeze({
      * Require consistently using either `T[]` or `Array<T>` for arrays.
      * @see {@link https://typescript-eslint.io/rules/array-type | array-type}
      */
-    '@typescript-eslint/array-type': ['error',
-        {
-            'default': 'generic',
-        },
-    ],
+    '@typescript-eslint/array-type': ['error', {
+        'default': 'generic',
+    }],
 
     /**
      * Disallow awaiting a value that is not a Thenable.
@@ -117,12 +116,10 @@ const typescriptRules = Object.freeze({
      * Enforce consistent usage of type assertions.
      * @see {@link https://typescript-eslint.io/rules/consistent-type-assertions | consistent-type-assertions}
      */
-    '@typescript-eslint/consistent-type-assertions': ['error',
-        {
-            assertionStyle: 'as',
-            objectLiteralTypeAssertions: 'allow',
-        },
-    ],
+    '@typescript-eslint/consistent-type-assertions': ['error', {
+        assertionStyle: 'as',
+        objectLiteralTypeAssertions: 'allow',
+    }],
 
     /**
      * Enforce type definitions to consistently use either interface or type.
@@ -134,23 +131,19 @@ const typescriptRules = Object.freeze({
      * Enforce consistent usage of type exports.
      * @see {@link https://typescript-eslint.io/rules/consistent-type-exports | consistent-type-exports}
      */
-    '@typescript-eslint/consistent-type-exports': ['error',
-        {
-            fixMixedExportsWithInlineTypeSpecifier: true,
-        },
-    ],
+    '@typescript-eslint/consistent-type-exports': ['error', {
+        fixMixedExportsWithInlineTypeSpecifier: true,
+    }],
 
     /**
      * Enforce consistent usage of type imports.
      * @see {@link https://typescript-eslint.io/rules/consistent-type-imports | consistent-type-imports}
      */
-    '@typescript-eslint/consistent-type-imports': ['error',
-        {
-            prefer: 'type-imports',
-            disallowTypeAnnotations: true,
-            fixStyle: 'inline-type-imports',
-        },
-    ],
+    '@typescript-eslint/consistent-type-imports': ['error', {
+        prefer: 'type-imports',
+        disallowTypeAnnotations: true,
+        fixStyle: 'inline-type-imports',
+    }],
 
     /**
      * Enforce default parameters to be last.
@@ -168,42 +161,36 @@ const typescriptRules = Object.freeze({
      * Require explicit return types on functions and class methods.
      * @see {@link https://typescript-eslint.io/rules/explicit-function-return-type | explicit-function-return-type}
      */
-    '@typescript-eslint/explicit-function-return-type': ['warn',
-        {
-            allowExpressions: true,
-            allowTypedFunctionExpressions: true,
-            allowHigherOrderFunctions: true,
-            allowDirectConstAssertionInArrowFunctions: true,
-            allowConciseArrowFunctionExpressionsStartingWithVoid: false,
-            allowFunctionsWithoutTypeParameters: false,
-            allowedNames: [],
-            allowIIFEs: true,
-        },
-    ],
+    '@typescript-eslint/explicit-function-return-type': ['warn', {
+        allowExpressions: true,
+        allowTypedFunctionExpressions: true,
+        allowHigherOrderFunctions: true,
+        allowDirectConstAssertionInArrowFunctions: true,
+        allowConciseArrowFunctionExpressionsStartingWithVoid: false,
+        allowFunctionsWithoutTypeParameters: false,
+        allowedNames: [],
+        allowIIFEs: true,
+    }],
 
     /**
      * Require explicit accessibility modifiers on class properties and methods.
      * @see {@link https://typescript-eslint.io/rules/explicit-member-accessibility | explicit-member-accessibility}
      */
-    '@typescript-eslint/explicit-member-accessibility': ['error',
-        {
-            accessibility: 'explicit',
-        },
-    ],
+    '@typescript-eslint/explicit-member-accessibility': ['error', {
+        accessibility: 'explicit',
+    }],
 
     /**
      * Require explicit return and argument types on exported functions' and classes' public class methods.
      * @see {@link https://typescript-eslint.io/rules/explicit-module-boundary-types | explicit-module-boundary-types}
      */
-    '@typescript-eslint/explicit-module-boundary-types': ['error',
-        {
-            allowArgumentsExplicitlyTypedAsAny: false,
-            allowDirectConstAssertionInArrowFunctions: true,
-            allowedNames: [],
-            allowHigherOrderFunctions: true,
-            allowTypedFunctionExpressions: true,
-        },
-    ],
+    '@typescript-eslint/explicit-module-boundary-types': ['error', {
+        allowArgumentsExplicitlyTypedAsAny: false,
+        allowDirectConstAssertionInArrowFunctions: true,
+        allowedNames: [],
+        allowHigherOrderFunctions: true,
+        allowTypedFunctionExpressions: true,
+    }],
 
     /**
      * Require or disallow initialization in variable declarations.
@@ -233,47 +220,39 @@ const typescriptRules = Object.freeze({
      * Enforce naming conventions for everything across a codebase.
      * @see {@link https://typescript-eslint.io/rules/naming-convention | naming-convention}
      */
-    '@typescript-eslint/naming-convention': ['error',
-        {
-            selector: 'default',
-            format: ['camelCase'],
-        },
-        {
-            selector: 'variableLike',
-            format: ['camelCase', 'PascalCase'],
-        },
-        {
-            selector: 'import',
-            format: ['camelCase', 'PascalCase'],
-        },
-        {
-            selector: ['typeLike', 'class'],
-            format: ['PascalCase'],
-        },
-        {
-            selector: ['typeProperty'],
-            format: ['PascalCase', 'camelCase', 'UPPER_CASE', 'snake_case'],
-        },
-        {
-            selector: ['variable', 'parameter'],
-            modifiers: ['destructured'],
-            format: null,
-        },
-        {
-            selector: [
-                'classProperty',
-                'objectLiteralProperty',
-                'typeProperty',
-                'classMethod',
-                'objectLiteralMethod',
-                'typeMethod',
-                'accessor',
-                'enumMember',
-            ],
-            modifiers: ['requiresQuotes'],
-            format: null,
-        },
-    ],
+    '@typescript-eslint/naming-convention': ['error', {
+        selector: 'default',
+        format: ['camelCase'],
+    }, {
+        selector: 'variableLike',
+        format: ['camelCase', 'PascalCase'],
+    }, {
+        selector: 'import',
+        format: ['camelCase', 'PascalCase'],
+    }, {
+        selector: ['typeLike', 'class'],
+        format: ['PascalCase'],
+    }, {
+        selector: ['typeProperty'],
+        format: ['PascalCase', 'camelCase', 'UPPER_CASE', 'snake_case'],
+    }, {
+        selector: ['variable', 'parameter'],
+        modifiers: ['destructured'],
+        format: null,
+    }, {
+        selector: [
+            'classProperty',
+            'objectLiteralProperty',
+            'typeProperty',
+            'classMethod',
+            'objectLiteralMethod',
+            'typeMethod',
+            'accessor',
+            'enumMember',
+        ],
+        modifiers: ['requiresQuotes'],
+        format: null,
+    }],
 
     /**
      * Disallow generic `Array` constructors.
@@ -304,6 +283,12 @@ const typescriptRules = Object.freeze({
      * @see {@link https://typescript-eslint.io/rules/no-confusing-void-expression | no-confusing-void-expression}
      */
     '@typescript-eslint/no-confusing-void-expression': 'error',
+
+    /**
+     * Disallow using code marked as `@deprecated`.
+     * @see {@link https://typescript-eslint.io/rules/no-deprecated | no-deprecated}
+     */
+    '@typescript-eslint/no-deprecated': 'error',
 
     /**
      * Disallow duplicate class members.
@@ -434,13 +419,17 @@ const typescriptRules = Object.freeze({
      * Disallow Promises in places not designed to handle them.
      * @see {@link https://typescript-eslint.io/rules/no-misused-promises | no-misused-promises}
      */
-    '@typescript-eslint/no-misused-promises': ['error',
-        {
-            checksVoidReturn: {
-                arguments: false,
-            },
+    '@typescript-eslint/no-misused-promises': ['error', {
+        checksVoidReturn: {
+            arguments: false,
         },
-    ],
+    }],
+
+    /**
+     * Disallow using the spread operator when it might cause unexpected behavior.
+     * @see {@link https://typescript-eslint.io/rules/no-misused-spread | no-misused-spread}
+     */
+    '@typescript-eslint/no-misused-spread': 'error',
 
     /**
      * Disallow enums from having both number and string members.
@@ -452,11 +441,9 @@ const typescriptRules = Object.freeze({
      * Disallow TypeScript namespaces.
      * @see {@link https://typescript-eslint.io/rules/no-namespace | no-namespace}
      */
-    '@typescript-eslint/no-namespace': ['error',
-        {
-            allowDeclarations: true,
-        },
-    ],
+    '@typescript-eslint/no-namespace': ['error', {
+        allowDeclarations: true,
+    }],
 
     /**
      * Disallow non-null assertions in the left operand of a nullish coalescing operator.
@@ -567,6 +554,13 @@ const typescriptRules = Object.freeze({
     '@typescript-eslint/no-unnecessary-type-constraint': 'error',
 
     /**
+     * Disallow conversion idioms when they do not change the type or value of the expression.
+     * @see {@link https://typescript-eslint.io/rules/no-unnecessary-type-conversion | no-unnecessary-type-conversion}
+     */
+    '@typescript-eslint/no-unnecessary-type-conversion': 'error',
+
+
+    /**
      * Disallow type parameters that aren't used multiple times.
      * @see {@link https://typescript-eslint.io/rules/no-unnecessary-type-parameters | no-unnecessary-type-parameters}
      */
@@ -621,6 +615,12 @@ const typescriptRules = Object.freeze({
     '@typescript-eslint/no-unsafe-return': 'error',
 
     /**
+     * Disallow type assertions that narrow a type.
+     * @see {@link https://typescript-eslint.io/rules/no-unsafe-type-assertion | no-unsafe-type-assertion}
+     */
+    '@typescript-eslint/no-unsafe-type-assertion': 'error',
+
+    /**
      * Require unary negation to take a number.
      * @see {@link https://typescript-eslint.io/rules/no-unsafe-unary-minus | no-unsafe-unary-minus}
      */
@@ -631,6 +631,12 @@ const typescriptRules = Object.freeze({
      * @see {@link https://typescript-eslint.io/rules/no-unused-expressions | no-unused-expressions}
      */
     '@typescript-eslint/no-unused-expressions': eslintRules['no-unused-expressions'],
+
+    /**
+     * Disallow unused private class members.
+     * @see {@link https://typescript-eslint.io/rules/no-unused-private-class-members | no-unused-private-class-members}
+     */
+    '@typescript-eslint/no-unused-private-class-members': 'error',
 
     /**
      * Disallow unused variables.
@@ -649,6 +655,12 @@ const typescriptRules = Object.freeze({
      * @see {@link https://typescript-eslint.io/rules/no-useless-constructor | no-useless-constructor}
      */
     '@typescript-eslint/no-useless-constructor': eslintRules['no-useless-constructor'],
+
+    /**
+     * Disallow default values that will never be used.
+     * @see {@link https://typescript-eslint.io/rules/no-useless-default-assignment | no-useless-default-assignment}
+     */
+    '@typescript-eslint/no-useless-default-assignment': 'error',
 
     /**
      * Disallow empty exports that don't change anything in a module file.
@@ -795,6 +807,12 @@ const typescriptRules = Object.freeze({
     '@typescript-eslint/promise-function-async': 'error',
 
     /**
+     * Enforce that get() types should be assignable to their equivalent set() type.
+     * @see {@link https://typescript-eslint.io/rules/related-getter-setter-pairs | related-getter-setter-pairs}
+     */
+    '@typescript-eslint/related-getter-setter-pairs': 'error',
+
+    /**
      * Require Array#sort and Array#toSorted calls to always provide a compareFunction.
      * @see {@link https://typescript-eslint.io/rules/require-array-sort-compare | require-array-sort-compare}
      */
@@ -819,10 +837,22 @@ const typescriptRules = Object.freeze({
     '@typescript-eslint/restrict-template-expressions': 'error',
 
     /**
+     * Enforce consistent awaiting of returned promises.
+     * @see {@link https://typescript-eslint.io/rules/return-await | return-await}
+     */
+    '@typescript-eslint/return-await': ['error', 'always'],
+
+    /**
      * Disallow certain types in boolean expressions.
      * @see {@link https://typescript-eslint.io/rules/strict-boolean-expressions | strict-boolean-expressions}
      */
     '@typescript-eslint/strict-boolean-expressions': 'error',
+
+    /**
+     * Disallow passing a value-returning function in a position accepting a void function.
+     * @see {@link https://typescript-eslint.io/rules/strict-void-return | strict-void-return}
+     */
+    '@typescript-eslint/strict-void-return': 'error',
 
     /**
      * Require switch-case statements to be exhaustive.

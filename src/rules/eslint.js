@@ -29,31 +29,27 @@ const eslintRules = Object.freeze({
      * Enforce camelcase naming convention
      * @see {@link https://eslint.org/docs/latest/rules/camelcase | camelcase}
      */
-    camelcase: ['error',
-        {
-            ignoreDestructuring: false,
-            properties: 'never',
-        },
-    ],
+    camelcase: ['error', {
+        ignoreDestructuring: false,
+        properties: 'never',
+    }],
 
     /**
      * Enforce or disallow capitalization of the first letter of a comment
      * @see {@link https://eslint.org/docs/latest/rules/capitalized-comments | capitalized-comments}
      */
-    'capitalized-comments': ['off', 'never',
-        {
-            line: {
-                ignorePattern: '.*',
-                ignoreInlineComments: true,
-                ignoreConsecutiveComments: true,
-            },
-            block: {
-                ignorePattern: '.*',
-                ignoreInlineComments: true,
-                ignoreConsecutiveComments: true,
-            },
+    'capitalized-comments': ['off', 'never', {
+        line: {
+            ignorePattern: '.*',
+            ignoreInlineComments: true,
+            ignoreConsecutiveComments: true,
         },
-    ],
+        block: {
+            ignorePattern: '.*',
+            ignoreInlineComments: true,
+            ignoreConsecutiveComments: true,
+        },
+    }],
 
     /**
      * Enforce that class methods utilize this
@@ -95,11 +91,9 @@ const eslintRules = Object.freeze({
      * Require default cases in switch statements
      * @see {@link https://eslint.org/docs/latest/rules/default-case | default-case}
      */
-    'default-case': ['error',
-        {
-            commentPattern: '^no default$',
-        },
-    ],
+    'default-case': ['error', {
+        commentPattern: '^no default$',
+    }],
 
     /**
      * Enforce default clauses in switch statements to be last
@@ -117,21 +111,17 @@ const eslintRules = Object.freeze({
      * Enforce dot notation whenever possible
      * @see {@link https://eslint.org/docs/latest/rules/dot-notation | dot-notation}
      */
-    'dot-notation': ['error',
-        {
-            allowKeywords: true,
-        },
-    ],
+    'dot-notation': ['error', {
+        allowKeywords: true,
+    }],
 
     /**
      * Require the use of === and !==
      * @see {@link https://eslint.org/docs/latest/rules/eqeqeq | eqeqeq}
      */
-    eqeqeq: ['error', 'always',
-        {
-            'null': 'ignore',
-        },
-    ],
+    eqeqeq: ['error', 'always', {
+        'null': 'ignore',
+    }],
 
     /**
      * Enforce "for" loop update clause moving the counter in the right direction
@@ -143,12 +133,10 @@ const eslintRules = Object.freeze({
      * Require function names to match the name of the variable or property to which they are assigned
      * @see {@link https://eslint.org/docs/latest/rules/func-name-matching | func-name-matching}
      */
-    'func-name-matching': ['off', 'always',
-        {
-            includeCommonJSModuleExports: false,
-            considerPropertyDescriptor: true,
-        },
-    ],
+    'func-name-matching': ['off', 'always', {
+        includeCommonJSModuleExports: false,
+        considerPropertyDescriptor: true,
+    }],
 
     /**
      * Require or disallow named function expressions
@@ -166,11 +154,9 @@ const eslintRules = Object.freeze({
      * Enforce return statements in getters
      * @see {@link https://eslint.org/docs/latest/rules/getter-return | getter-return}
      */
-    'getter-return': ['error',
-        {
-            allowImplicit: true,
-        },
-    ],
+    'getter-return': ['error', {
+        allowImplicit: true,
+    }],
 
     /**
      * Require grouped accessor pairs in object literals and classes
@@ -212,11 +198,9 @@ const eslintRules = Object.freeze({
      * Require or disallow logical assignment operator shorthand
      * @see {@link https://eslint.org/docs/latest/rules/logical-assignment-operators | logical-assignment-operators}
      */
-    'logical-assignment-operators': ['off', 'always',
-        {
-            enforceForIfStatements: true,
-        },
-    ],
+    'logical-assignment-operators': ['off', 'always', {
+        enforceForIfStatements: true,
+    }],
 
     /**
      * Enforce a maximum number of classes per file
@@ -234,26 +218,22 @@ const eslintRules = Object.freeze({
      * Enforce a maximum number of lines per file
      * @see {@link https://eslint.org/docs/latest/rules/max-lines | max-lines}
      */
-    'max-lines': ['off',
-        {
-            max: 300,
-            skipBlankLines: true,
-            skipComments: true,
-        },
-    ],
+    'max-lines': ['off', {
+        max: 300,
+        skipBlankLines: true,
+        skipComments: true,
+    }],
 
     /**
      * Enforce a maximum number of lines of code in a function
      * @see {@link https://eslint.org/docs/latest/rules/max-lines-per-function | max-lines-per-function}
      */
-    'max-lines-per-function': ['off',
-        {
-            max: 50,
-            skipBlankLines: true,
-            skipComments: true,
-            IIFEs: true,
-        },
-    ],
+    'max-lines-per-function': ['off', {
+        max: 50,
+        skipBlankLines: true,
+        skipComments: true,
+        IIFEs: true,
+    }],
 
     /**
      * Enforce a maximum depth that callbacks can be nested
@@ -277,18 +257,16 @@ const eslintRules = Object.freeze({
      * Require constructor names to begin with a capital letter
      * @see {@link https://eslint.org/docs/latest/rules/new-cap | new-cap}
      */
-    'new-cap': ['error',
-        {
-            newIsCap: true,
-            newIsCapExceptions: [],
-            capIsNew: false,
-            capIsNewExceptions: [
-                'Immutable.Map',
-                'Immutable.Set',
-                'Immutable.List',
-            ],
-        },
-    ],
+    'new-cap': ['error', {
+        newIsCap: true,
+        newIsCapExceptions: [],
+        capIsNew: false,
+        capIsNewExceptions: [
+            'Immutable.Map',
+            'Immutable.Set',
+            'Immutable.List',
+        ],
+    }],
 
     /**
      * Disallow the use of alert, confirm, and prompt
@@ -450,11 +428,9 @@ const eslintRules = Object.freeze({
      * Disallow else blocks after return statements in if statements
      * @see {@link https://eslint.org/docs/latest/rules/no-else-return | no-else-return}
      */
-    'no-else-return': ['error',
-        {
-            allowElseIf: false,
-        },
-    ],
+    'no-else-return': ['error', {
+        allowElseIf: false,
+    }],
 
     /**
      * Disallow empty block statements
@@ -544,24 +520,20 @@ const eslintRules = Object.freeze({
      * Disallow assignments to native objects or read-only global variables
      * @see {@link https://eslint.org/docs/latest/rules/no-global-assign | no-global-assign}
      */
-    'no-global-assign': ['error',
-        {
-            exceptions: [],
-        },
-    ],
+    'no-global-assign': ['error', {
+        exceptions: [],
+    }],
 
     /**
      * Disallow shorthand type conversions
      * @see {@link https://eslint.org/docs/latest/rules/no-implicit-coercion | no-implicit-coercion}
      */
-    'no-implicit-coercion': ['off',
-        {
-            'boolean': false,
-            number: true,
-            string: true,
-            allow: [],
-        },
-    ],
+    'no-implicit-coercion': ['off', {
+        'boolean': false,
+        number: true,
+        string: true,
+        allow: [],
+    }],
 
     /**
      * Disallow declarations in the global scope
@@ -627,12 +599,10 @@ const eslintRules = Object.freeze({
      * Disallow labeled statements
      * @see {@link https://eslint.org/docs/latest/rules/no-labels | no-labels}
      */
-    'no-labels': ['error',
-        {
-            allowLoop: false,
-            allowSwitch: false,
-        },
-    ],
+    'no-labels': ['error', {
+        allowLoop: false,
+        allowSwitch: false,
+    }],
 
     /**
      * Disallow unnecessary nested blocks
@@ -662,14 +632,12 @@ const eslintRules = Object.freeze({
      * Disallow magic numbers
      * @see {@link https://eslint.org/docs/latest/rules/no-magic-numbers | no-magic-numbers}
      */
-    'no-magic-numbers': ['off',
-        {
-            ignore: [],
-            ignoreArrayIndexes: true,
-            enforceConst: true,
-            detectObjects: false,
-        },
-    ],
+    'no-magic-numbers': ['off', {
+        ignore: [],
+        ignoreArrayIndexes: true,
+        enforceConst: true,
+        detectObjects: false,
+    }],
 
     /**
      * Disallow characters which are made with multiple code points in character class syntax
@@ -759,11 +727,9 @@ const eslintRules = Object.freeze({
      * Disallow reassigning function parameters
      * @see {@link https://eslint.org/docs/latest/rules/no-param-reassign | no-param-reassign}
      */
-    'no-param-reassign': ['error',
-        {
-            props: false,
-        },
-    ],
+    'no-param-reassign': ['error', {
+        props: false,
+    }],
 
     /**
      * Disallow the unary operators ++ and --
@@ -805,122 +771,98 @@ const eslintRules = Object.freeze({
      * Disallow specified names in exports
      * @see {@link https://eslint.org/docs/latest/rules/no-restricted-exports | no-restricted-exports}
      */
-    'no-restricted-exports': ['error',
-        {
-            restrictedNamedExports: [
-                'default',
-                'then',
-            ],
-        },
-    ],
+    'no-restricted-exports': ['error', {
+        restrictedNamedExports: [
+            'default',
+            'then',
+        ],
+    }],
 
     /**
      * Disallow specified global variables
      * @see {@link https://eslint.org/docs/latest/rules/no-restricted-globals | no-restricted-globals}
      */
-    'no-restricted-globals': ['error',
-        {
-            name: 'isFinite',
-            message: 'Use Number.isFinite instead.',
-        },
-        {
-            name: 'isNaN',
-            message: 'Use Number.isNaN instead.',
-        },
-        ...confusingBrowserGlobals.map((g) => ({
-            name: g,
-            message: `Use window.${g} instead.`,
-        })),
-    ],
+    'no-restricted-globals': ['error', {
+        name: 'isFinite',
+        message: 'Use Number.isFinite instead.',
+    }, {
+        name: 'isNaN',
+        message: 'Use Number.isNaN instead.',
+    }, ...confusingBrowserGlobals.map((g) => ({
+        name: g,
+        message: `Use window.${g} instead.`,
+    }))],
 
     /**
      * Disallow specified modules when loaded by import
      * @see {@link https://eslint.org/docs/latest/rules/no-restricted-imports | no-restricted-imports}
      */
-    'no-restricted-imports': ['off',
-        {
-            paths: [],
-            patterns: [],
-        },
-    ],
+    'no-restricted-imports': ['off', {
+        paths: [],
+        patterns: [],
+    }],
 
     /**
      * Disallow certain properties on certain objects
      * @see {@link https://eslint.org/docs/latest/rules/no-restricted-properties | no-restricted-properties}
      */
-    'no-restricted-properties': ['error',
-        {
-            object: 'arguments',
-            property: 'callee',
-            message: 'arguments.callee is deprecated',
-        },
-        {
-            object: 'global',
-            property: 'isFinite',
-            message: 'Please use Number.isFinite instead',
-        },
-        {
-            object: 'self',
-            property: 'isFinite',
-            message: 'Please use Number.isFinite instead',
-        },
-        {
-            object: 'window',
-            property: 'isFinite',
-            message: 'Please use Number.isFinite instead',
-        },
-        {
-            object: 'global',
-            property: 'isNaN',
-            message: 'Please use Number.isNaN instead',
-        },
-        {
-            object: 'self',
-            property: 'isNaN',
-            message: 'Please use Number.isNaN instead',
-        },
-        {
-            object: 'window',
-            property: 'isNaN',
-            message: 'Please use Number.isNaN instead',
-        },
-        {
-            property: '__defineGetter__',
-            message: 'Please use Object.defineProperty instead.',
-        },
-        {
-            property: '__defineSetter__',
-            message: 'Please use Object.defineProperty instead.',
-        },
-        {
-            object: 'Math',
-            property: 'pow',
-            message: 'Use the exponentiation operator (**) instead.',
-        },
-    ],
+    'no-restricted-properties': ['error', {
+        object: 'arguments',
+        property: 'callee',
+        message: 'arguments.callee is deprecated',
+    }, {
+        object: 'global',
+        property: 'isFinite',
+        message: 'Please use Number.isFinite instead',
+    }, {
+        object: 'self',
+        property: 'isFinite',
+        message: 'Please use Number.isFinite instead',
+    }, {
+        object: 'window',
+        property: 'isFinite',
+        message: 'Please use Number.isFinite instead',
+    }, {
+        object: 'global',
+        property: 'isNaN',
+        message: 'Please use Number.isNaN instead',
+    }, {
+        object: 'self',
+        property: 'isNaN',
+        message: 'Please use Number.isNaN instead',
+    }, {
+        object: 'window',
+        property: 'isNaN',
+        message: 'Please use Number.isNaN instead',
+    }, {
+        property: '__defineGetter__',
+        message: 'Please use Object.defineProperty instead.',
+    }, {
+        property: '__defineSetter__',
+        message: 'Please use Object.defineProperty instead.',
+    }, {
+        object: 'Math',
+        property: 'pow',
+        message: 'Use the exponentiation operator (**) instead.',
+    }],
 
     /**
      * Disallow specified syntax
      * @see {@link https://eslint.org/docs/latest/rules/no-restricted-syntax | no-restricted-syntax}
      */
-    'no-restricted-syntax': ['error',
-        {
-            selector: 'ForInStatement',
-            message: 'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
-        },
-        {
-            selector: 'LabeledStatement',
-            message: 'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
-        },
-        {
-            selector: 'WithStatement',
-            message: '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
-        },
-        {
-            selector: 'TSEnumDeclaration',
-            message: 'I don\'t like enums.',
-        },
-    ],
+    'no-restricted-syntax': ['error', {
+        selector: 'ForInStatement',
+        message: 'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
+    }, {
+        selector: 'LabeledStatement',
+        message: 'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
+    }, {
+        selector: 'WithStatement',
+        message: '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
+    }, {
+        selector: 'TSEnumDeclaration',
+        message: 'I don\'t like enums.',
+    }],
 
     /**
      * Disallow assignment operators in return statements
@@ -938,11 +880,9 @@ const eslintRules = Object.freeze({
      * Disallow assignments where both sides are exactly the same
      * @see {@link https://eslint.org/docs/latest/rules/no-self-assign | no-self-assign}
      */
-    'no-self-assign': ['error',
-        {
-            props: true,
-        },
-    ],
+    'no-self-assign': ['error', {
+        props: true,
+    }],
 
     /**
      * Disallow comparisons where both sides are exactly the same
@@ -1017,6 +957,12 @@ const eslintRules = Object.freeze({
     'no-undef-init': 'error',
 
     /**
+     * Disallow let or var variables that are read but never assigned
+     * @see {@link https://eslint.org/docs/latest/rules/no-unassigned-vars | no-unassigned-vars}
+     */
+    'no-unassigned-vars': 'error',
+
+    /**
      * Disallow the use of undefined as an identifier
      * @see {@link https://eslint.org/docs/latest/rules/no-undefined | no-undefined}
      */
@@ -1026,14 +972,12 @@ const eslintRules = Object.freeze({
      * Disallow dangling underscores in identifiers
      * @see {@link https://eslint.org/docs/latest/rules/no-underscore-dangle | no-underscore-dangle}
      */
-    'no-underscore-dangle': ['error',
-        {
-            allow: [],
-            allowAfterThis: false,
-            allowAfterSuper: false,
-            enforceInMethodNames: true,
-        },
-    ],
+    'no-underscore-dangle': ['error', {
+        allow: [],
+        allowAfterThis: false,
+        allowAfterSuper: false,
+        enforceInMethodNames: true,
+    }],
 
     /**
      * Disallow confusing multiline expressions
@@ -1051,11 +995,9 @@ const eslintRules = Object.freeze({
      * Disallow ternary operators when simpler alternatives exist
      * @see {@link https://eslint.org/docs/latest/rules/no-unneeded-ternary | no-unneeded-ternary}
      */
-    'no-unneeded-ternary': ['error',
-        {
-            defaultAssignment: false,
-        },
-    ],
+    'no-unneeded-ternary': ['error', {
+        defaultAssignment: false,
+    }],
 
     /**
      * Disallow unreachable code after return, throw, continue, and break statements
@@ -1067,11 +1009,9 @@ const eslintRules = Object.freeze({
      * Disallow loops with a body that allows only one iteration
      * @see {@link https://eslint.org/docs/latest/rules/no-unreachable-loop | no-unreachable-loop}
      */
-    'no-unreachable-loop': ['error',
-        {
-            ignore: [],
-        },
-    ],
+    'no-unreachable-loop': ['error', {
+        ignore: [],
+    }],
 
     /**
      * Disallow control flow statements in finally blocks
@@ -1089,23 +1029,19 @@ const eslintRules = Object.freeze({
      * Disallow use of optional chaining in contexts where the undefined value is not allowed
      * @see {@link https://eslint.org/docs/latest/rules/no-unsafe-optional-chaining | no-unsafe-optional-chaining}
      */
-    'no-unsafe-optional-chaining': ['error',
-        {
-            disallowArithmeticOperators: true,
-        },
-    ],
+    'no-unsafe-optional-chaining': ['error', {
+        disallowArithmeticOperators: true,
+    }],
 
     /**
      * Disallow unused expressions
      * @see {@link https://eslint.org/docs/latest/rules/no-unused-expressions | no-unused-expressions}
      */
-    'no-unused-expressions': ['error',
-        {
-            allowShortCircuit: false,
-            allowTernary: false,
-            allowTaggedTemplates: false,
-        },
-    ],
+    'no-unused-expressions': ['error', {
+        allowShortCircuit: false,
+        allowTernary: false,
+        allowTaggedTemplates: false,
+    }],
 
     /**
      * Disallow unused labels
@@ -1123,26 +1059,22 @@ const eslintRules = Object.freeze({
      * Disallow unused variables
      * @see {@link https://eslint.org/docs/latest/rules/no-unused-vars | no-unused-vars}
      */
-    'no-unused-vars': ['error',
-        {
-            vars: 'all',
-            args: 'after-used',
-            ignoreRestSiblings: true,
-            caughtErrors: 'none',
-        },
-    ],
+    'no-unused-vars': ['error', {
+        vars: 'all',
+        args: 'after-used',
+        ignoreRestSiblings: true,
+        caughtErrors: 'none',
+    }],
 
     /**
      * Disallow the use of variables before they are defined
      * @see {@link https://eslint.org/docs/latest/rules/no-use-before-define | no-use-before-define}
      */
-    'no-use-before-define': ['error',
-        {
-            functions: true,
-            classes: true,
-            variables: true,
-        },
-    ],
+    'no-use-before-define': ['error', {
+        functions: true,
+        classes: true,
+        variables: true,
+    }],
 
     /**
      * Disallow variable assignments when the value is not used
@@ -1196,13 +1128,11 @@ const eslintRules = Object.freeze({
      * Disallow renaming import, export, and destructured assignments to the same name
      * @see {@link https://eslint.org/docs/latest/rules/no-useless-rename | no-useless-rename}
      */
-    'no-useless-rename': ['error',
-        {
-            ignoreDestructuring: false,
-            ignoreImport: false,
-            ignoreExport: false,
-        },
-    ],
+    'no-useless-rename': ['error', {
+        ignoreDestructuring: false,
+        ignoreImport: false,
+        ignoreExport: false,
+    }],
 
     /**
      * Disallow redundant return statements
@@ -1231,16 +1161,14 @@ const eslintRules = Object.freeze({
      * Disallow specified warning terms in comments
      * @see {@link https://eslint.org/docs/latest/rules/no-warning-comments | no-warning-comments}
      */
-    'no-warning-comments': ['off',
-        {
-            terms: [
-                'todo',
-                'fixme',
-                'xxx',
-            ],
-            location: 'start',
-        },
-    ],
+    'no-warning-comments': ['off', {
+        terms: [
+            'todo',
+            'fixme',
+            'xxx',
+        ],
+        location: 'start',
+    }],
 
     /**
      * Disallow with statements
@@ -1252,12 +1180,10 @@ const eslintRules = Object.freeze({
      * Require or disallow method and property shorthand syntax for object literals
      * @see {@link https://eslint.org/docs/latest/rules/object-shorthand | object-shorthand}
      */
-    'object-shorthand': ['error', 'always',
-        {
-            ignoreConstructors: false,
-            avoidQuotes: true,
-        },
-    ],
+    'object-shorthand': ['error', 'always', {
+        ignoreConstructors: false,
+        avoidQuotes: true,
+    }],
 
     /**
      * Enforce variables to be declared either together or separately in functions
@@ -1275,34 +1201,25 @@ const eslintRules = Object.freeze({
      * Require using arrow functions for callbacks
      * @see {@link https://eslint.org/docs/latest/rules/prefer-arrow-callback | prefer-arrow-callback}
      */
-    'prefer-arrow-callback': ['error',
-        {
-            allowNamedFunctions: false,
-            allowUnboundThis: true,
-        },
-    ],
+    'prefer-arrow-callback': ['error', {
+        allowNamedFunctions: false,
+        allowUnboundThis: true,
+    }],
 
     /**
      * Require const declarations for variables that are never reassigned after declared
      * @see {@link https://eslint.org/docs/latest/rules/prefer-const | prefer-const}
      */
-    'prefer-const': ['error',
-        {
-            destructuring: 'any',
-            ignoreReadBeforeAssign: true,
-        },
-    ],
+    'prefer-const': ['error', {
+        destructuring: 'any',
+        ignoreReadBeforeAssign: true,
+    }],
 
     /**
      * Require destructuring from arrays and/or objects
      * @see {@link https://eslint.org/docs/latest/rules/prefer-destructuring | prefer-destructuring}
      */
-    'prefer-destructuring': ['error',
-        {
-            array: false,
-            object: true,
-        },
-    ],
+    'prefer-destructuring': 'off',
 
     /**
      * Disallow the use of Math.pow in favor of the ** operator
@@ -1338,21 +1255,17 @@ const eslintRules = Object.freeze({
      * Require using Error objects as Promise rejection reasons
      * @see {@link https://eslint.org/docs/latest/rules/prefer-promise-reject-errors | prefer-promise-reject-errors}
      */
-    'prefer-promise-reject-errors': ['error',
-        {
-            allowEmptyReject: true,
-        },
-    ],
+    'prefer-promise-reject-errors': ['error', {
+        allowEmptyReject: true,
+    }],
 
     /**
      * Disallow use of the RegExp constructor in favor of regular expression literals
      * @see {@link https://eslint.org/docs/latest/rules/prefer-regex-literals | prefer-regex-literals}
      */
-    'prefer-regex-literals': ['error',
-        {
-            disallowRedundantWrapping: true,
-        },
-    ],
+    'prefer-regex-literals': ['error', {
+        disallowRedundantWrapping: true,
+    }],
 
     /**
      * Require rest parameters instead of arguments
@@ -1371,6 +1284,14 @@ const eslintRules = Object.freeze({
      * @see {@link https://eslint.org/docs/latest/rules/prefer-template | prefer-template}
      */
     'prefer-template': 'error',
+
+    /**
+     * Disallow losing originally caught error when re-throwing custom errors
+     * @see {@link https://eslint.org/docs/latest/rules/preserve-caught-error | preserve-caught-error}
+     */
+    'preserve-caught-error': ['error', {
+        requireCatchParameter: true,
+    }],
 
     /**
      * Enforce the consistent use of the radix argument when using parseInt()
@@ -1406,30 +1327,26 @@ const eslintRules = Object.freeze({
      * Enforce sorted import declarations within modules
      * @see {@link https://eslint.org/docs/latest/rules/sort-imports | sort-imports}
      */
-    'sort-imports': ['off',
-        {
-            ignoreCase: false,
-            ignoreDeclarationSort: false,
-            ignoreMemberSort: false,
-            memberSyntaxSortOrder: [
-                'none',
-                'all',
-                'multiple',
-                'single',
-            ],
-        },
-    ],
+    'sort-imports': ['off', {
+        ignoreCase: false,
+        ignoreDeclarationSort: false,
+        ignoreMemberSort: false,
+        memberSyntaxSortOrder: [
+            'none',
+            'all',
+            'multiple',
+            'single',
+        ],
+    }],
 
     /**
      * Require object keys to be sorted
      * @see {@link https://eslint.org/docs/latest/rules/sort-keys | sort-keys}
      */
-    'sort-keys': ['off', 'asc',
-        {
-            caseSensitive: false,
-            natural: true,
-        },
-    ],
+    'sort-keys': ['off', 'asc', {
+        caseSensitive: false,
+        natural: true,
+    }],
 
     /**
      * Require variables within the same declaration block to be sorted
@@ -1465,11 +1382,9 @@ const eslintRules = Object.freeze({
      * Enforce comparing typeof expressions against valid strings
      * @see {@link https://eslint.org/docs/latest/rules/valid-typeof | valid-typeof}
      */
-    'valid-typeof': ['error',
-        {
-            requireStringLiterals: true,
-        },
-    ],
+    'valid-typeof': ['error', {
+        requireStringLiterals: true,
+    }],
 
     /**
      * Require var declarations be placed at the top of their containing scope

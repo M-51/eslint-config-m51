@@ -5,6 +5,7 @@ const importDisabledInTypescript = [
     'import-x/default',
     'import-x/named',
     'import-x/namespace',
+    'import-x/no-deprecated',
     'import-x/no-unresolved',
     'import-x/extensions',
     'import-x/no-named-as-default-member',
