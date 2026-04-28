@@ -20,3 +20,17 @@ export default eslintConfigReactM51;
 for React
 
 * for TypeScript, requires `strictNullChecks` or `strict` to be `true` in `tsconfig.json`,
+
+If you want to extend config:
+```
+import eslintConfigReactM51 from 'eslint-config-m51/react';
+
+const config = [
+    ...eslintConfigReactM51,
+    {
+        // extra rules
+    },
+];
+
+export default config;
+```
