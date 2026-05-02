@@ -258,6 +258,12 @@ const reactX = Object.freeze({
     '@eslint-react/no-unused-props': 'warn',
 
     /**
+     * Warns about state variables that are defined but never used, or only used in effects.
+     * @see {@link https://eslint-react.xyz/docs/rules/no-unused-state | no-unused-state}
+     */
+    '@eslint-react/no-unused-state': 'error',
+
+    /**
      * Replaces usage of `useContext` with `use`.
      * @see {@link https://eslint-react.xyz/docs/rules/no-use-context | no-use-context}
      */
