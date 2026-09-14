@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-m51",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "My eslint config",
   "exports": {
     ".": "./eslint.config.js",
@@ -27,18 +27,18 @@
   },
   "homepage": "https://github.com/M-51/eslint-config-m51#readme",
   "devDependencies": {
-    "typescript": "^6.0.3"
+    "typescript": "~6.0.3"
   },
   "dependencies": {
-    "@eslint-react/eslint-plugin": "^5.7.0",
-    "@stylistic/eslint-plugin": "^6.0.0-beta.4",
+    "@eslint-react/eslint-plugin": "^5.19.0",
+    "@stylistic/eslint-plugin": "6.0.0-beta.6",
     "confusing-browser-globals": "^1.0.11",
-    "eslint-import-resolver-typescript": "^4.4.4",
-    "eslint-plugin-import-x": "^4.16.2",
-    "globals": "^17.6.0",
-    "typescript-eslint": "^8.59.1"
+    "eslint-import-resolver-typescript": "^4.4.5",
+    "eslint-plugin-import-x": "^4.17.1",
+    "globals": "^17.12.0",
+    "typescript-eslint": "^8.70.0"
   },
   "peerDependencies": {
-    "eslint": "^10.3.0"
+    "eslint": "^10.10.0"
   }
 }

@@ -1,26 +1,5 @@
 const stylisticRules = Object.freeze({
     /**
-     * This rule enforces line breaks after opening and before closing array brackets.
-     * @see {@link https://eslint.style/rules/array-bracket-newline | array-bracket-newline}
-     */
-    '@stylistic/array-bracket-newline': ['off', 'consistent'],
-
-    /**
-     * This rule enforces consistent spacing inside array brackets.
-     * @see {@link https://eslint.style/rules/array-bracket-spacing | array-bracket-spacing}
-     */
-    '@stylistic/array-bracket-spacing': ['error', 'never'],
-
-    /**
-     * This rule enforces line breaks between array elements.
-     * @see {@link https://eslint.style/rules/array-element-newline | array-element-newline}
-     */
-    '@stylistic/array-element-newline': ['off', {
-        multiline: true,
-        minItems: 3,
-    }],
-
-    /**
      * This rule enforces parentheses around arrow function parameters regardless of arity.
      * @see {@link https://eslint.style/rules/arrow-parens | arrow-parens}
      */
@@ -145,22 +124,26 @@ const stylisticRules = Object.freeze({
     '@stylistic/eol-last': ['error', 'always'],
 
     /**
-     * This rule enforces line breaks between arguments of a function call.
-     * @see {@link https://eslint.style/rules/function-call-argument-newline | function-call-argument-newline}
+     * This rule checks the line break style of JSX props based on the first prop's position.
+     * If the first prop is on the same line as the opening tag, all props should be on the same line.
+     * If the first prop is on a new line, all props should be on separate lines.
+     * @see {@link https://eslint.style/rules/jsx-props-style | jsx-props-style}
      */
-    '@stylistic/function-call-argument-newline': ['error', 'consistent'],
+    '@stylistic/exp-jsx-props-style': ['error', {
+        singleLine: {
+            maxItems: 4,
+        },
+        multiLine: {
+            minItems: 0,
+            maxItemsPerLine: 1,
+        },
+    }],
 
     /**
      * This rule requires or disallows spaces between the function name and the opening parenthesis that calls it.
      * @see {@link https://eslint.style/rules/function-call-spacing | function-call-spacing}
      */
     '@stylistic/function-call-spacing': ['error', 'never'],
-
-    /**
-     * This rule enforces consistent line breaks inside parentheses of function parameters or arguments.
-     * @see {@link https://eslint.style/rules/function-paren-newline | function-paren-newline}
-     */
-    '@stylistic/function-paren-newline': ['error', 'multiline-arguments'],
 
     /**
      * This rule aims to enforce spacing around the * of generator functions.
@@ -334,22 +317,6 @@ const stylisticRules = Object.freeze({
     '@stylistic/jsx-pascal-case': 'error',
 
     /**
-     * This rule checks the line break style of JSX props based on the first prop's position.
-     * If the first prop is on the same line as the opening tag, all props should be on the same line.
-     * If the first prop is on a new line, all props should be on separate lines.
-     * @see {@link https://eslint.style/rules/jsx-props-style | jsx-props-style}
-     */
-    '@stylistic/exp-jsx-props-style': ['error', {
-        singleLine: {
-            maxItems: 4,
-        },
-        multiLine: {
-            minItems: 0,
-            maxItemsPerLine: 1,
-        },
-    }],
-
-    /**
      * JSX attribute values can contain string literals, which are delimited with single or double quotes.
      * @see {@link https://eslint.style/rules/jsx-quotes | jsx-quotes}
      */
@@ -364,6 +331,18 @@ const stylisticRules = Object.freeze({
         component: true,
         html: true,
     }],
+
+    /**
+     * Enforce shorthand for boolean JSX attributes.
+     * @see {@link https://eslint.style/rules/jsx-shorthand-boolean | jsx-shorthand-boolean}
+     */
+    '@stylistic/jsx-shorthand-boolean': 'error',
+
+    /**
+     * Enforce shorthand fragment syntax.
+     * @see {@link https://eslint.style/rules/jsx-shorthand-fragment | jsx-shorthand-fragment}
+     */
+    '@stylistic/jsx-shorthand-fragment': 'error',
 
     /**
      * This rule checks the whitespace inside and surrounding the JSX syntactic elements.
@@ -471,7 +450,7 @@ const stylisticRules = Object.freeze({
     '@stylistic/line-comment-position': ['off', {
         position: 'above',
         ignorePattern: '',
-        applyDefaultPatterns: true,
+        applyDefaultIgnorePatterns: true,
     }],
 
     /**
@@ -498,9 +477,11 @@ const stylisticRules = Object.freeze({
 
     /**
      * Enforce consistent spacing and line break styles inside brackets.
+     * Preserve the former object-curly-newline thresholds and empty array/function spacing.
      * @see {@link https://eslint.style/rules/list-style | list-style}
      */
-    '@stylistic/exp-list-style': ['error', {
+    '@stylistic/list-style': ['error', {
+        empty: 'ignore',
         singleLine: {
             spacing: 'never',
             maxItems: Number.POSITIVE_INFINITY,
@@ -512,6 +493,63 @@ const stylisticRules = Object.freeze({
             '{}': {
                 singleLine: {
                     spacing: 'always',
+                },
+            },
+            ArrayExpression: {
+                empty: 'never',
+            },
+            ArrayPattern: {
+                empty: 'never',
+            },
+            ArrowFunctionExpression: {
+                empty: 'never',
+                // Overrides use `multiline`, unlike the top-level `multiLine` option.
+                multiline: {
+                    minItems: 1,
+                },
+            },
+            CallExpression: {
+                empty: 'never',
+                multiline: {
+                    minItems: 1,
+                },
+            },
+            ExportNamedDeclaration: {
+                singleLine: {
+                    maxItems: 7,
+                },
+            },
+            FunctionDeclaration: {
+                empty: 'never',
+                multiline: {
+                    minItems: 1,
+                },
+            },
+            FunctionExpression: {
+                empty: 'never',
+                multiline: {
+                    minItems: 1,
+                },
+            },
+            ImportDeclaration: {
+                singleLine: {
+                    maxItems: 7,
+                },
+            },
+            NewExpression: {
+                empty: 'never',
+                multiline: {
+                    minItems: 1,
+                },
+            },
+            ObjectExpression: {
+                singleLine: {
+                    maxItems: 6,
+                },
+            },
+            ObjectPattern: {
+                singleLine: {
+                    maxItems: 6,
                 },
             },
         },
@@ -732,50 +770,6 @@ const stylisticRules = Object.freeze({
      */
     '@stylistic/nonblock-statement-body-position': ['error', 'beside', {
         overrides: {},
-    }],
-
-    /**
-     * This rule requires or disallows a line break.
-     * @see {@link https://eslint.style/rules/object-curly-newline | object-curly-newline}
-     */
-    '@stylistic/object-curly-newline': ['error', {
-        ObjectExpression: {
-            minProperties: 7,
-            multiline: true,
-            consistent: true,
-        },
-        ObjectPattern: {
-            minProperties: 7,
-            multiline: true,
-            consistent: true,
-        },
-        ImportDeclaration: {
-            minProperties: 8,
-            multiline: true,
-            consistent: true,
-        },
-        ExportDeclaration: {
-            minProperties: 8,
-            multiline: true,
-            consistent: true,
-        },
-    }],
-
-    /**
-     * This rule enforces consistent spacing inside braces of object literals, destructuring assignments, and import/export specifiers.
-     * @see {@link https://eslint.style/rules/object-curly-spacing | object-curly-spacing}
-     */
-    '@stylistic/object-curly-spacing': ['error', 'always'],
-
-    /**
-     * This rule permits you to restrict the locations of property specifications in object literals.
-     * You may prohibit any part of any property specification from appearing on the same line as any part of any other property specification.
-     * You may make this prohibition absolute, or, by invoking an object option, you may allow an exception,
-     * permitting an object literal to have all parts of all of its property specifications on a single line.
-     * @see {@link https://eslint.style/rules/object-property-newline | object-property-newline}
-     */
-    '@stylistic/object-property-newline': ['error', {
-        allowAllPropertiesOnSameLine: true,
     }],
 
     /**

@@ -1,11 +1,5 @@
 const reactX = Object.freeze({
     /**
-     * Disallows higher order functions that define components or hooks inside them.
-     * @see {@link https://eslint-react.xyz/docs/rules/component-hook-factories | component-hook-factories}
-     */
-    '@eslint-react/component-hook-factories': 'error',
-
-    /**
      * Validates usage of Error Boundaries instead of try/catch for errors in child components.
      * @see {@link https://eslint-react.xyz/docs/rules/error-boundaries | error-boundaries}
      */

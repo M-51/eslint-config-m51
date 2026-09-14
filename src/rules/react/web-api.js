@@ -12,6 +12,12 @@ const reactWebApi = Object.freeze({
     '@eslint-react/web-api-no-leaked-fetch': 'warn',
 
     /**
+     * Enforces that every `IntersectionObserver` created in a component or custom hook has a corresponding `IntersectionObserver.disconnect()`.
+     * @see {@link https://eslint-react.xyz/docs/rules/web-api-no-leaked-intersection-observer | web-api-no-leaked-intersection-observer}
+     */
+    '@eslint-react/web-api-no-leaked-intersection-observer': 'warn',
+
+    /**
      * Enforces that every `setInterval` in a component or custom hook has a corresponding `clearInterval`.
      * @see {@link https://eslint-react.xyz/docs/rules/web-api-no-leaked-interval | web-api-no-leaked-interval}
      */

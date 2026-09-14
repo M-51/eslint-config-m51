@@ -20,6 +20,7 @@ const rulesHandledByTypescript = [
 ];
 
 const rulesExtendedByTypescriptEslint = [
+    'camelcase', // extended by `naming-conventions`
     'class-methods-use-this',
     'consistent-return',
     'default-param-last',
@@ -31,10 +32,8 @@ const rulesExtendedByTypescriptEslint = [
     'no-empty-function',
     'no-implied-eval',
     'no-invalid-this',
-    'no-loop-func',
     'no-magic-numbers',
     'no-redeclare',
-    'no-restricted-imports',
     'no-shadow',
     'no-unused-expressions',
     'no-unused-private-class-members',
@@ -44,7 +43,6 @@ const rulesExtendedByTypescriptEslint = [
     'prefer-destructuring',
     'prefer-promise-reject-errors',
     'require-await',
-    'camelcase', // extended by `naming-conventions`
 ];
 
 const typescriptRules = Object.freeze({
@@ -362,6 +360,12 @@ const typescriptRules = Object.freeze({
     '@typescript-eslint/no-for-in-array': 'error',
 
     /**
+     * Disallow type operations that resolve to the "empty object" type.
+     * @see {@link https://typescript-eslint.io/rules/no-generated-empty-object-type | no-generated-empty-object-type}
+     */
+    '@typescript-eslint/no-generated-empty-object-type': 'error',
+
+    /**
      * Disallow the use of `eval()-like` methods.
      * @see {@link https://typescript-eslint.io/rules/no-implied-eval | no-implied-eval}
      */
@@ -390,12 +394,6 @@ const typescriptRules = Object.freeze({
      * @see {@link https://typescript-eslint.io/rules/no-invalid-void-type | no-invalid-void-type}
      */
     '@typescript-eslint/no-invalid-void-type': 'error',
-
-    /**
-     * Disallow function declarations that contain unsafe references inside loop statements.
-     * @see {@link https://typescript-eslint.io/rules/no-loop-func | no-loop-func}
-     */
-    '@typescript-eslint/no-loop-func': eslintRules['no-loop-func'],
 
     /**
      * Disallow magic numbers.
@@ -480,12 +478,6 @@ const typescriptRules = Object.freeze({
      * @see {@link https://typescript-eslint.io/rules/no-require-imports | no-require-imports}
      */
     '@typescript-eslint/no-require-imports': 'error',
-
-    /**
-     * Disallow specified modules when loaded by import.
-     * @see {@link https://typescript-eslint.io/rules/no-restricted-imports | no-restricted-imports}
-     */
-    '@typescript-eslint/no-restricted-imports': eslintRules['no-restricted-imports'],
 
     /**
      * Disallow certain types.
@@ -865,12 +857,6 @@ const typescriptRules = Object.freeze({
      * @see {@link https://typescript-eslint.io/rules/triple-slash-reference | triple-slash-reference}
      */
     '@typescript-eslint/triple-slash-reference': 'error',
-
-    /**
-     * Require type annotations in certain places.
-     * @see {@link https://typescript-eslint.io/rules/typedef | typedef}
-     */
-    '@typescript-eslint/typedef': 'off',
 
     /**
      * Enforce unbound methods are called with their expected scope.
