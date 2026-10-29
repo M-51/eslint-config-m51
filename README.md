@@ -7,7 +7,7 @@ An opinionated ESLint flat configuration for JavaScript, TypeScript, and React. 
 | Dependency | Version |
 | --- | --- |
 | Node.js | `^22.13.0 \|\| >=24` |
-| ESLint | `^10.10.0` |
+| ESLint | `^10.13.0` |
 | TypeScript | `~6.0.3` for the current TypeScript 6 setup |
 | ESLint Stylistic | `6.0.0-beta.6`, included as a dependency |
 
@@ -18,7 +18,7 @@ This package uses ES modules and ESLint's flat config format (`eslint.config.js`
 ## Installation
 
 ```sh
-npm install --save-dev eslint-config-m51 "eslint@^10.10.0" "typescript@~6.0.3"
+npm install --save-dev eslint-config-m51 "eslint@^10.13.0" "typescript@~6.0.3"
 ```
 
 The plugins and TypeScript import resolver are included; you do not need to install or register them separately.

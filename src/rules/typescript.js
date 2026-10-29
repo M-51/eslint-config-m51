@@ -583,6 +583,13 @@ const typescriptRules = Object.freeze({
     '@typescript-eslint/no-unsafe-declaration-merging': 'error',
 
     /**
+     * Disallow assigning non-enum values to enum typed locations.
+     * Disabled because enum declarations are already prohibited by this configuration.
+     * @see {@link https://typescript-eslint.io/rules/no-unsafe-enum-assignment | no-unsafe-enum-assignment}
+     */
+    '@typescript-eslint/no-unsafe-enum-assignment': 'off',
+
+    /**
      * Disallow comparing an enum value with a non-enum value.
      * @see {@link https://typescript-eslint.io/rules/no-unsafe-enum-comparison | no-unsafe-enum-comparison}
      */
